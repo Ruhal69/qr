@@ -10,13 +10,35 @@
     <div class="container">
         <h1>QR Code Generator</h1>
         <p>Enter text to generate your QR code:</p>
+        
+        <!-- Input Field -->
         <input type="text" id="dataInput" placeholder="Type here..." required>
+        
+        <!-- QR Code Color Customization -->
+        <div class="color-options">
+            <label for="colorPicker">QR Code Color: </label>
+            <input type="color" id="colorPicker" value="#000000"> <!-- Default black color -->
+        </div>
+        
+        <!-- Generate QR Code Button -->
         <button onclick="generateCode()">Generate QR Code</button>
+        
+        <!-- Download QR Code Button -->
+        <button onclick="downloadQRCode()">Download QR Code</button>
+        
+        <!-- Share Button -->
+        <button onclick="shareQRCode()">Share QR Code</button>
+        
+        <!-- QR Code Image -->
         <div class="image-container">
             <img id="codeImage" alt="Generated QR Code">
         </div>
+        
+        <!-- History Section -->
+        <h2>History</h2>
+        <div id="historyList" class="history-list"></div>
     </div>
-    
+
     <!-- Include QRCode.js for QR generation -->
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
     <script src="script.js"></script>
